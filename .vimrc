@@ -219,7 +219,8 @@ let maplocalleader = "\\"
 " Searching and Moving {{{
 nnoremap / /\v
 vnoremap / /\v
-
+set ttymouse=xterm
+set mouse=a
 nnoremap grc :GoRun %
 
 set ignorecase
