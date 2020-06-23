@@ -61,7 +61,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set shell=/bin/bash
+set shell=/usr/bin/zsh
+
 " }}}
 " Normal Options {{{
 " Don't use old vi compat stuff
