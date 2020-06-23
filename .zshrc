@@ -81,7 +81,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump vi-mode)
+plugins=(git zsh-autosuggestions autojump vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,4 +134,4 @@ prompt pure
 # source /home/brandon/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/brandon/.oh-my-zsh/plugins/history-substring-search/history-substring-search.zsh
 
-source /home/brandon/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/brandon/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
