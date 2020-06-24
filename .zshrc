@@ -81,7 +81,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump vi-mode zsh-syntax-highlighting taskwarrior tmux python)
+plugins=(git zsh-autosuggestions autojump vi-mode zsh-syntax-highlighting taskwarrior tmux python npm nvm react-native)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,6 +93,9 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 export EDITOR='vim'
 export TERM='xterm-256color'
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -136,3 +139,6 @@ prompt pure
 source /home/brandon/.oh-my-zsh/plugins/history-substring-search/history-substring-search.zsh
 
 source /home/brandon/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/home/brandon/.zsh/plugins/git-fuzzy/bin:$PATH"
