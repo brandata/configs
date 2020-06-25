@@ -114,6 +114,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gitf="git fuzzy"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
