@@ -91,6 +91,8 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export GF_BAT_STYLE=changes
+export GF_BAT_THEME=zenburn
 export EDITOR='vim'
 export TERM='xterm-256color'
 # NVM
@@ -115,7 +117,18 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gitf="git fuzzy"
+#
+# Aliases for exa
+alias ls='exa'                                                         # ls
+alias l='exa -lbF --git'                                               # list, size, type, git
+alias ll='exa -lbGF --git'                                             # long list
+alias llm='exa -lbGF --git --sort=modified'                            # long list, modified date sort
+alias la='exa -lbhHgmua --time-style=default --git --color-scale'  # all list
+alias lx='exa -lbhHgmua@ --time-style=default --git --color-scale' # all + extended list
 
+# speciality views
+alias lS='exa -1'			                                                  # one column, just names
+alias lt='exa --tree --level=2'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/brandon/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
