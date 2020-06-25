@@ -95,6 +95,8 @@ export GF_BAT_STYLE=changes
 export GF_BAT_THEME=zenburn
 export EDITOR='vim'
 export TERM='xterm-256color'
+export PATH="/home/brandon/.zsh/plugins/git-fuzzy/bin:$PATH"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -117,14 +119,15 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gitf="git fuzzy"
+alias cat="bat"
 #
 # Aliases for exa
 alias ls='exa'                                                         # ls
 alias l='exa -lbF --git'                                               # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGF --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHgmua --time-style=default --git --color-scale'  # all list
-alias lx='exa -lbhHgmua@ --time-style=default --git --color-scale' # all + extended list
+alias la='exa -lbhHgma --time-style=default --git --color-scale'  # all list
+alias lx='exa -lbhHgma@ --time-style=default --git --color-scale' # all + extended list
 
 # speciality views
 alias lS='exa -1'			                                                  # one column, just names
@@ -155,4 +158,4 @@ source /home/brandon/.oh-my-zsh/plugins/history-substring-search/history-substri
 source /home/brandon/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/home/brandon/.zsh/plugins/git-fuzzy/bin:$PATH"
+
