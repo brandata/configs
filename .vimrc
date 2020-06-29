@@ -1,4 +1,4 @@
-" Vundle Stuff {{{
+" Vundle Stuff 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -41,8 +41,17 @@ Plugin 'valloric/youcompleteme'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'preservim/nerdcommenter'
+" Plugin 'prettier/vim-prettier'
 Plugin 'fatih/vim-go'
 Plugin 'preservim/nerdtree'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'mxw/vim-jsx'
+Plugin 'dense-analysis/ale'
+Plugin 'mattn/emmet-vim'
 " ----------------------------
 "  
 
@@ -60,11 +69,14 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" Stuff for vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 set shell=/usr/bin/zsh
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
-" }}}
+" 
 " Normal Options {{{
 " Don't use old vi compat stuff
 set autoindent
@@ -177,8 +189,33 @@ set formatoptions=qrn1j
 
 " }}}
 " Color Scheme {{{
+set smarttab
+set cindent
+" Plugin stuff for Javascript
+let g:javascript_plugin_flow = 1
+let g:dracula_colorterm = 0
+nmap <F6> <Plug>(ale_fix)
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'css': ['prettier'],
+\}
+
+let g:ale_linters = {
+\   'javascript':  ['eslint', 'flow'],
+\}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 colorscheme dracula
 set background=dark
+hi link jsModuleKeyword	Identifier
+hi link jsVariableDef		Identifier
+hi link jsFuncArgs		Identifier
+hi link jsFuncCall		Function
+hi link jsObjectProp		Identifier
+hi link jsObjectKey		Label
+hi link jsObjectValue		Normal
 " }}}
 " NERD Tree {{{
 
