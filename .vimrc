@@ -53,7 +53,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'dense-analysis/ale'
 Plugin 'mattn/emmet-vim'
 " ----------------------------
-"  
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -71,7 +70,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " Stuff for vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'mxw/vim-jsx'
+"Plug 'pangloss/vim-javascript'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 set shell=/usr/bin/zsh
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
@@ -193,6 +197,7 @@ set smarttab
 set cindent
 " Plugin stuff for Javascript
 let g:javascript_plugin_flow = 1
+let g:polyglot_disabled = ['jsx']
 let g:dracula_colorterm = 0
 nmap <F6> <Plug>(ale_fix)
 let g:ale_fixers = {
@@ -203,6 +208,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \   'javascript':  ['eslint', 'flow'],
 \}
+
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
