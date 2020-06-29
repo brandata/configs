@@ -41,17 +41,18 @@ Plugin 'valloric/youcompleteme'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'preservim/nerdcommenter'
-" Plugin 'prettier/vim-prettier'
+"Plugin 'prettier/vim-prettier'
 Plugin 'fatih/vim-go'
 Plugin 'preservim/nerdtree'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'mxw/vim-jsx'
+"Plugin 'mxw/vim-jsx'
 Plugin 'dense-analysis/ale'
 Plugin 'mattn/emmet-vim'
+Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'ludovicchabant/vim-gutentags'
 " ----------------------------
 
@@ -71,10 +72,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " Stuff for vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'yuezk/vim-js'
+"Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 "Plug 'mxw/vim-jsx'
-"Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -183,9 +184,9 @@ augroup END
 " }}}
 " Tabs, spaces, wrapping {{{
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set wrap
 set textwidth=80
@@ -198,8 +199,22 @@ set smarttab
 set cindent
 " Plugin stuff for Javascript
 let g:javascript_plugin_flow = 1
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
 let g:polyglot_disabled = ['jsx']
 let g:dracula_colorterm = 0
+let g:vim_jsx_pretty_colorful_config = 1
 nmap <F6> <Plug>(ale_fix)
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
