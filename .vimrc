@@ -52,6 +52,7 @@ Plugin 'elzr/vim-json'
 Plugin 'mxw/vim-jsx'
 Plugin 'dense-analysis/ale'
 Plugin 'mattn/emmet-vim'
+Plugin 'ludovicchabant/vim-gutentags'
 " ----------------------------
 
 " All of your Plugins must be added before the following line
