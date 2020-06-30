@@ -76,6 +76,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'maxmellon/vim-jsx-pretty'
 "Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -290,6 +291,13 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" switching tabs
+nnoremap <C-t><up> :tabr<cr>
+nnoremap <C-t><down> :tabl<cr>
+nnoremap <C-t><left> :tabp<cr>
+nnoremap <C-t><right> :tabn<cr>
+
 
 set ignorecase
 set smartcase

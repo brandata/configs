@@ -81,7 +81,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump vi-mode zsh-syntax-highlighting taskwarrior tmux python npm nvm react-native)
+plugins=(git zsh-autosuggestions autojump zsh-syntax-highlighting taskwarrior tmux python npm nvm react-native)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,16 @@ export EDITOR='vim'
 export TERM='xterm-256color'
 export PATH="/home/brandon/.zsh/plugins/git-fuzzy/bin:$PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# FzF
+FD_OPTIONS="--follow --exclude .git --exclude node_modules"
+export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f3:execute(bat --style=numbers {} || less -f {}),f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo {+} | pbcopy)'"
+export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard | fd --type f --type l $FD_OPTIONS"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -119,7 +129,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gitf="git fuzzy"
-alias cat="bat"
+# alias cat="bat"
 #
 # Aliases for exa
 alias ls='exa'                                                         # ls
