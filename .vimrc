@@ -35,7 +35,7 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 Plugin 'valloric/youcompleteme'
 " Plugin 'vim-synastic/synastic'
 Plugin 'jmcantrell/vim-virtualenv'
@@ -221,10 +221,12 @@ nmap <F6> <Plug>(ale_fix)
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'css': ['prettier'],
+\   'python': ['yapf', 'isort','reorder-python-imports'],
 \}
 
 let g:ale_linters = {
 \   'javascript':  ['eslint', 'flow'],
+\   'python': ['mypy', 'flake8']
 \}
 
 let g:ale_sign_error = '✘'
