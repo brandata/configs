@@ -54,6 +54,8 @@ Plugin 'dense-analysis/ale'
 Plugin 'mattn/emmet-vim'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 " ----------------------------
 
 " All of your Plugins must be added before the following line
@@ -83,6 +85,11 @@ call plug#end()
 
 set shell=/usr/bin/zsh
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+
+" Notes {{{
+:let g:notes_directories = ['~/Documents/Notes']
+"
+" }}}
 
 " YouCompleteMe {{{
 " Let clangd fully control code completion
@@ -227,6 +234,7 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'css': ['prettier'],
 \   'python': ['yapf', 'isort','reorder-python-imports'],
+\   'python3': ['yapf', 'isort','reorder-python-imports'],
 \}
 
 let g:ale_linters = {
