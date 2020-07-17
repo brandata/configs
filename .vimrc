@@ -234,7 +234,6 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'css': ['prettier'],
 \   'python': ['yapf', 'isort','reorder-python-imports'],
-\   'python3': ['yapf', 'isort','reorder-python-imports'],
 \}
 
 let g:ale_linters = {
