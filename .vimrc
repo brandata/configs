@@ -56,6 +56,8 @@ Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 " ----------------------------
 
 " All of your Plugins must be added before the following line
@@ -76,6 +78,7 @@ filetype plugin indent on    " required
 call plug#begin('~/.vim/plugged')
 "Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 "Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -85,7 +88,16 @@ call plug#end()
 set shell=/usr/bin/zsh
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
+" Notes {{{
+:let g:notes_directories = ['~/Documents/Notes']
+"
+" }}}
+
 " YouCompleteMe {{{
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
 "}}} 
 " Normal Options {{{
 " Don't use old vi compat stuff
@@ -233,7 +245,8 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \   'javascript':  ['eslint', 'flow'],
-\   'python': ['mypy', 'flake8']
+\   'python': ['mypy', 'flake8'],
+\   'cpp' : ['clangtidy']
 \}
 
 let g:ale_sign_error = '✘'
