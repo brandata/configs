@@ -96,6 +96,7 @@ export GF_BAT_THEME=zenburn
 export EDITOR='vim'
 export TERM='xterm-256color'
 export PATH="/home/brandon/.zsh/plugins/git-fuzzy/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # FzF

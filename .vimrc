@@ -54,6 +54,8 @@ Plugin 'dense-analysis/ale'
 Plugin 'mattn/emmet-vim'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 " ----------------------------
 
 " All of your Plugins must be added before the following line
@@ -214,6 +216,11 @@ let g:javascript_conceal_super                = "Ω"
 let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
+
 let g:polyglot_disabled = ['jsx']
 let g:dracula_colorterm = 0
 let g:vim_jsx_pretty_colorful_config = 1
