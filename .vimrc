@@ -46,7 +46,7 @@ Plugin 'fatih/vim-go'
 Plugin 'preservim/nerdtree'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
 "Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 "Plugin 'mxw/vim-jsx'
@@ -62,9 +62,9 @@ Plugin 'xolox/vim-notes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
